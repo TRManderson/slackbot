@@ -1,4 +1,4 @@
-from .core.listener import SlackListener
+from . import SlackListener
 import logging
 import asyncio
 import time
@@ -14,6 +14,7 @@ listener.client.rtm_connect = dummy1
 
 @listener.on_message('message')
 async def dummy_handler(listener, message):
+	raise Exception("Trying stuff out!")
 	listener.logger.debug(f"Message: {message}")
 
 def dummy2(*args, **kwargs):
