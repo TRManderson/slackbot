@@ -23,4 +23,5 @@ def dummy2(*args, **kwargs):
 	return [{"type": "message"}]
 listener.client.rtm_read = dummy2
 
-loop.run_until_complete(listener.run(loop))
+l_awaitable = listener.run(loop)
+loop.run_until_complete(l_awaitable)

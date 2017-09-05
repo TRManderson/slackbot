@@ -60,7 +60,7 @@ class SlackListener(object):
     async def _await_error(self, name, awaitable):
         try:
             return (await awaitable)
-        except:
+        except Exception:
             self.logger.exception(f'Error in handler "{name}"')
             return None
 
